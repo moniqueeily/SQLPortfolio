@@ -1,0 +1,1 @@
+Hello and welcome to my Portfolio Projects page! These are a few of the projects that I have worked on and have went in depth in various datasets. These projects showcase my SQL skills and knowledge. 
