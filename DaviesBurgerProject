@@ -1,0 +1,56 @@
+-- In this project I dug into a companies orders table to see if there is anything interesting in there for a funny tagline
+
+SELECT *
+FROM orders
+LIMIT 10;
+
+
+-- To show how recent the order dates are
+SELECT DISTINCT order_date
+FROM orders;
+
+-- Selecting only the special_instructions column.
+SELECT DISTINCT special_instructions
+FROM orders;
+
+-- Limiting the result to 20 rows.
+SELECT DISTINCT special_instructions
+FROM orders
+LIMIT 20;
+
+-- Only returning the special instructions that are not empty.
+SELECT special_instructions
+FROM orders
+WHERE special_instructions IS NOT NULL;
+
+
+-- Sorting the instructions in alphabetical order (A-Z).
+SELECT special_instructions
+FROM orders
+WHERE special_instructions IS NOT NULL
+ORDER BY special_instructions ASC;
+
+
+-- Searching for special instructions that have the word ‘sauce’.
+SELECT special_instructions
+FROM orders
+WHERE special_instructions LIKE '%sauce%';
+
+-- searching for special instructions that have the word ‘door’.
+SELECT special_instructions
+FROM orders
+WHERE special_instructions LIKE '%door%';
+
+
+-- Searching for special instructions that have the word ‘box’.
+SELECT special_instructions
+FROM orders
+WHERE special_instructions LIKE '%box%';
+
+-- Returning the special instructions and their order ids and also renaming the columns.
+SELECT id AS '#', 
+   special_instructions AS 'Notes'
+FROM orders
+WHERE special_instructions LIKE '%box%'; 
+
+
